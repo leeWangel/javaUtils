@@ -17,7 +17,6 @@ tmp/
 
 # IntelliJ
 .idea/
-.idea/vcs.xml
 *.iml
 
 # Java
