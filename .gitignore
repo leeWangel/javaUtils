@@ -16,7 +16,7 @@ tmp/
 .mvn/
 
 # IntelliJ
-.idea/*
+.idea/
 .idea/vcs.xml
 *.iml
 
