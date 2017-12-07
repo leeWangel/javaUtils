@@ -1,9 +1,8 @@
 package com.lee.wangel;
 
 /**
- * @Desription: 测试
- * @CreatedDate: 2017/12/7 17:34
- * @Author：wangel.lee
+ * 测试
+ * 2017/12/7 17:34 lee.wangel
  */
 public class Test {
 
