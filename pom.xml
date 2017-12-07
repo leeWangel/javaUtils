@@ -10,6 +10,7 @@
     <version>1.0.0</version>
     <name>lee-java-utils Maven Webapp</name>
     <url>https://github.com/wangel-lee/lee-java-utils</url>
+    <description>lee.wangel utils ,add third pardy jars pom.xml info </description>
 
 
     <modules/>
