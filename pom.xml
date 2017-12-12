@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.lee.wangel</groupId>
-    <artifactId>leeWangel-javaUtils</artifactId>
+    <artifactId>leeWangel-utilsJava</artifactId>
     <packaging>jar</packaging>
     <version>1.0.0</version>
     <name>wangel.lee java utils info</name>
-    <url>https://github.com/leeWangel/javaUtils.git</url>
+    <url>https://github.com/leeWangel/utilsJava.git</url>
     <description>wangel.lee utils ,add third pardy jars pom.xml info </description>
 
 
@@ -52,9 +52,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git@github.com:leeWangel/javaUtils.git</connection>
-        <developerConnection>scm:git@github.com:leeWangel/javaUtils.git</developerConnection>
-        <url>git@github.com:leeWangel/javaUtils.git</url>
+        <connection>scm:git@github.com:leeWangel/utilsJava.git</connection>
+        <developerConnection>scm:git@github.com:leeWangel/utilsJava.git</developerConnection>
+        <url>git@github.com:leeWangel/utilsJava.git</url>
     </scm>
 
 
@@ -81,7 +81,7 @@
             </plugin>
         </plugins>
 
-        <finalName>lhh-core-utils</finalName>
+        <finalName>utilsJava</finalName>
     </build>
 
 
