@@ -7,7 +7,7 @@
     <groupId>com.lee.wangel</groupId>
     <artifactId>leeWangel-utilsJava</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0</version>
+    <version>0.0.1-beta.1</version>
     <name>wangel.lee java utils info</name>
     <url>https://github.com/leeWangel/utilsJava.git</url>
     <description>wangel.lee utils ,add third pardy jars pom.xml info </description>
