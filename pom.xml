@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.lee-wangel</groupId>
-    <artifactId>leeWangel-utilsJava</artifactId>
+    <groupId>com.github.leewangel</groupId>
+    <artifactId>leewangel</artifactId>
     <packaging>jar</packaging>
     <version>0.0.1-beta.1</version>
     <name>wangel.lee java utils info</name>
@@ -85,6 +85,7 @@
     </build>
 
 
+    <!-- gpg http://central.sonatype.org/pages/apache-maven.html#gpg-signed-components -->
     <profiles>
         <profile>
             <id>release</id>
@@ -93,57 +94,65 @@
                     <id>oss</id>
                     <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
                 </snapshotRepository>
+                <!-- 由于OSSRH始终运行最新版本的Sonatype Nexus Repository Manager，因此最好使用最新版本的Nexus Staging Maven插件。-->
                 <repository>
                     <id>oss</id>
                     <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
                 </repository>
             </distributionManagement>
             <build>
-                <pluginManagement>
-                    <plugins>
-                        <!-- Source -->
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-source-plugin</artifactId>
-                            <executions>
-                                <execution>
-                                    <phase>package</phase>
-                                    <goals>
-                                        <goal>jar-no-fork</goal>
-                                    </goals>
-                                </execution>
-                            </executions>
-                        </plugin>
-                        <!-- Javadoc -->
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-javadoc-plugin</artifactId>
-                            <version>2.10.4</version>
-                            <executions>
-                                <execution>
-                                    <phase>package</phase>
-                                    <goals>
-                                        <goal>jar</goal>
-                                    </goals>
-                                </execution>
-                            </executions>
-                        </plugin>
-                        <!-- Gpg Signature -->
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-gpg-plugin</artifactId>
-                            <executions>
-                                <execution>
-                                    <id>sign-artifacts</id>
-                                    <phase>verify</phase>
-                                    <goals>
-                                        <goal>sign</goal>
-                                    </goals>
-                                </execution>
-                            </executions>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
+                <plugins>
+                    <!-- Source -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>leewangel-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <!-- Javadoc -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>leewangel-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <!-- Gpg Signature -->
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>oss</serverId>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>leewangel-sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
             </build>
         </profile>
     </profiles>
