@@ -1,1 +1,2 @@
  mvn clean deploy -P release -Dgpg.passphrase=243573295
+ mvn install
